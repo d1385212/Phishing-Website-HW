@@ -3,18 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const step1Area = document.getElementById('step1-area');
     const step2Area = document.getElementById('step2-area');
     const step3Area = document.getElementById('step3-area');
-    const steps = document.querySelectorAll('.step');
-    
-    const userInfoDisplay = document.getElementById('user-info-display');
-    const checkboxes = document.querySelectorAll('.ticket-cb');
-    const totalAmountSpan = document.getElementById('total-amount');
-    const finalAmountSpan = document.getElementById('final-amount');
-    const goStep3Btn = document.getElementById('go-step3-btn');
+    const userIdDisplay = document.getElementById('user-id-display');
 
     queryForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const idValue = document.getElementById('idNumber').value;
-        const dobValue = document.getElementById('dob').value;
 
         if(idValue.length !== 10) {
             alert('請輸入10碼完整身分證字號！');
@@ -22,54 +15,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const maskedId = idValue.substring(0, 6) + '****';
-        userInfoDisplay.textContent = `${maskedId} ${dobValue}`;
+        userIdDisplay.textContent = maskedId;
 
         step1Area.classList.add('hidden');
         step2Area.classList.remove('hidden');
-        
-        updateProgress(1);
+        window.scrollTo(0, 0);
     });
 
-    checkboxes.forEach(cb => {
-        cb.addEventListener('change', () => {
-            let total = 0;
-            checkboxes.forEach(box => {
-                if(box.checked) {
-                    total += parseInt(box.value);
-                }
-            });
-            
-            totalAmountSpan.textContent = total;
-            finalAmountSpan.textContent = total;
-
-            if(total > 0) {
-                goStep3Btn.classList.add('active');
-                goStep3Btn.disabled = false;
-            } else {
-                goStep3Btn.classList.remove('active');
-                goStep3Btn.disabled = true;
-            }
-        });
-    });
-
-    goStep3Btn.addEventListener('click', () => {
+    document.getElementById('go-step3-btn').addEventListener('click', () => {
         step2Area.classList.add('hidden');
         step3Area.classList.remove('hidden');
-        updateProgress(2);
+        window.scrollTo(0, 0);
     });
 
     document.getElementById('back-to-step1').addEventListener('click', (e) => {
         e.preventDefault();
         step2Area.classList.add('hidden');
         step1Area.classList.remove('hidden');
-        updateProgress(0);
     });
 
     document.getElementById('back-to-step2').addEventListener('click', (e) => {
         e.preventDefault();
         step3Area.classList.add('hidden');
         step2Area.classList.remove('hidden');
-        updateProgress(1);
     });
 
     document.getElementById('confirm-pay-btn').addEventListener('click', () => {
@@ -85,14 +53,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    function updateProgress(activeIndex) {
-        steps.forEach((step, index) => {
-            if(index === activeIndex) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
-        });
-    }
 });
