@@ -56,7 +56,7 @@
 
         <div id="step2-area" class="hidden">
             <p class="user-record-info">
-                <span id="user-id-display" class="highlight-pink"></span> 違規紀錄如下：
+                <span id="step2-user-id" class="highlight-pink"></span> 違規紀錄如下：
             </p>
             <p class="user-points-info">
                 請注意：您一年半內 機車駕照共記 <span class="highlight-red">2</span> 點
@@ -96,26 +96,58 @@
         </div>
 
         <div id="step3-area" class="hidden">
-            <h2 class="section-title">信用卡繳費</h2>
-            <p class="payment-summary">應繳總額：<span class="highlight-red">900</span> 元</p>
-            
-            <div class="query-form">
-                <div class="form-group">
-                    <label>信用卡號：</label>
-                    <div class="cc-inputs">
-                        <input type="text" maxlength="4" class="cc-part"> - 
-                        <input type="text" maxlength="4" class="cc-part"> - 
-                        <input type="text" maxlength="4" class="cc-part"> - 
-                        <input type="text" maxlength="4" class="cc-part">
+            <p class="user-record-info">
+                <span id="step3-user-id" class="highlight-pink"></span> 本次繳費清單：
+            </p>
+
+            <div class="progress-bar">
+                <div class="step">步驟一：<br>查詢交通罰鍰</div>
+                <div class="step-arrow">➡</div>
+                <div class="step">步驟二：<br>查看欲繳納的罰鍰</div>
+                <div class="step-arrow">➡</div>
+                <div class="step active">步驟三：<br>繳納費用</div>
+            </div>
+
+            <div class="table-container" style="padding: 0;">
+                <div class="record-grid">
+                    <div class="grid-header">違規日</div>
+                    <div class="grid-header">事由</div>
+                    <div class="grid-header">應到案日</div>
+                    <div class="grid-header">罰鍰</div>
+
+                    <div class="grid-cell">114年08月01日</div>
+                    <div class="grid-cell text-left">在禁止臨時停車處所停車</div>
+                    <div class="grid-cell">114年09月16日</div>
+                    <div class="grid-cell">900元</div>
+                </div>
+                <div class="table-footer">
+                    共 <span class="highlight-red">1</span> 筆，總金額： <span class="highlight-red footer-price">900元</span>
+                </div>
+            </div>
+
+            <div class="payment-section">
+                <div class="payment-radio">
+                    <input type="radio" id="credit-card" name="payment" checked>
+                    <label for="credit-card">信用卡繳費</label>
+                </div>
+                
+                <div class="payment-form-box">
+                    <div class="pay-form-group">
+                        <label>持卡人名字：</label>
+                        <input type="text">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label>有效年月：</label>
-                    <input type="text" placeholder="MM/YY" maxlength="5">
-                </div>
-                <div class="form-group">
-                    <label>安全碼：</label>
-                    <input type="text" placeholder="末三碼" maxlength="3" style="width: 120px;">
+                    <div class="pay-form-group">
+                        <label>信用卡卡號：</label>
+                        <input type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                    </div>
+                    <div class="pay-form-group">
+                        <label>有效日期：</label>
+                        <input type="text" placeholder="MMYY" maxlength="4" style="width: 100px;">
+                    </div>
+                    <div class="pay-form-group">
+                        <label>安全碼CVV：</label>
+                        <input type="text" placeholder="000" maxlength="3" style="width: 100px;">
+                    </div>
                 </div>
             </div>
 

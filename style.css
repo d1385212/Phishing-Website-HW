@@ -15,6 +15,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 2rem 0;
 }
 
 .container {
@@ -126,7 +127,12 @@ h1 {
 
 .highlight-red {
     color: #e53e3e;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.footer-price {
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 .tabs-container {
@@ -147,6 +153,18 @@ h1 {
     color: #333;
     position: relative;
     top: 2px;
+}
+
+.table-container {
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.table-desc {
+    margin: 0 0 15px 0;
+    color: #2d3748;
 }
 
 .record-grid {
@@ -182,6 +200,49 @@ h1 {
 .text-left {
     justify-content: flex-start;
     text-align: left;
+}
+
+.table-footer {
+    padding: 15px 20px;
+    text-align: right;
+    font-size: 1.1rem;
+    color: #555;
+    background-color: white;
+}
+
+.payment-section {
+    margin-top: 20px;
+}
+
+.payment-radio {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-form-box {
+    background-color: #f2f2f2;
+    padding: 25px 30px;
+    border-radius: 8px;
+    display: grid;
+    gap: 15px;
+}
+
+.pay-form-group {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+}
+
+.pay-form-group input {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 250px;
+    font-size: 1rem;
 }
 
 .step-actions {
@@ -270,31 +331,4 @@ input[type="text"], input[type="date"] {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
-}
-
-.section-title {
-    font-size: 1.4rem;
-    color: #2d3748;
-    border-left: 4px solid var(--primary-color);
-    padding-left: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.payment-summary {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    background-color: #fffaf0;
-    padding: 15px;
-    border: 1px solid #feebc8;
-    border-radius: 6px;
-}
-
-.cc-inputs {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.cc-inputs input {
-    text-align: center;
 }

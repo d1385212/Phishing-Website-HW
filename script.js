@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const step1Area = document.getElementById('step1-area');
     const step2Area = document.getElementById('step2-area');
     const step3Area = document.getElementById('step3-area');
-    const userIdDisplay = document.getElementById('user-id-display');
+    
+    const step2UserIdDisplay = document.getElementById('step2-user-id');
+    const step3UserIdDisplay = document.getElementById('step3-user-id');
 
     queryForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -15,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const maskedId = idValue.substring(0, 6) + '****';
-        userIdDisplay.textContent = maskedId;
+        step2UserIdDisplay.textContent = maskedId;
+        step3UserIdDisplay.textContent = maskedId;
 
         step1Area.classList.add('hidden');
         step2Area.classList.remove('hidden');
@@ -43,14 +46,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('confirm-pay-btn').addEventListener('click', () => {
         alert('繳費成功！(此為測試網頁)');
         location.reload(); 
-    });
-
-    const ccParts = document.querySelectorAll('.cc-part');
-    ccParts.forEach((input, index) => {
-        input.addEventListener('input', function() {
-            if (this.value.length === 4 && index < ccParts.length - 1) {
-                ccParts[index + 1].focus();
-            }
-        });
     });
 });
