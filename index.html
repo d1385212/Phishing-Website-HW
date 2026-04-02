@@ -25,12 +25,10 @@
                     <label for="idNumber">身分證字號：</label>
                     <input type="text" id="idNumber" placeholder="請輸入身分證字號" required>
                 </div>
-
                 <div class="form-group">
                     <label for="dob">出生年月日：</label>
                     <input type="date" id="dob" required>
                 </div>
-
                 <div class="form-group mock-captcha-group">
                     <label for="captcha">驗證碼：</label>
                     <div class="captcha-wrapper">
@@ -38,7 +36,6 @@
                         <div class="mock-captcha">A2EL</div>
                     </div>
                 </div>
-
                 <div class="button-group">
                     <button type="submit" class="submit-btn">查詢</button>
                 </div>
@@ -57,19 +54,63 @@
 
             <div class="table-container">
                 <p class="table-desc">下列罰單可做線上繳納：</p>
-                
                 <div class="record-grid">
+                    <div class="grid-header">勾選</div>
                     <div class="grid-header">違規日</div>
                     <div class="grid-header">事由</div>
                     <div class="grid-header">罰鍰</div>
                     <div class="grid-header">應到案日</div>
-                    <div class="grid-empty">查無可線上繳納罰單資料</div>
+
+                    <div class="grid-cell"><input type="checkbox" class="ticket-cb" value="1800"></div>
+                    <div class="grid-cell">112/05/12</div>
+                    <div class="grid-cell text-left">駕車行經有燈光號誌管制之交岔路口闖紅燈</div>
+                    <div class="grid-cell price-text">1800</div>
+                    <div class="grid-cell">112/06/25</div>
+
+                    <div class="grid-cell"><input type="checkbox" class="ticket-cb" value="600"></div>
+                    <div class="grid-cell">112/08/03</div>
+                    <div class="grid-cell text-left">在設有禁止停車標誌、標線之處所停車</div>
+                    <div class="grid-cell price-text">600</div>
+                    <div class="grid-cell">112/09/15</div>
+                </div>
+                <div class="total-area">
+                    目前選取總額：<span id="total-amount">0</span> 元
                 </div>
             </div>
 
-            <div class="step2-actions">
-                <button class="pay-btn" disabled>線上繳費</button>
+            <div class="step-actions">
+                <button id="go-step3-btn" class="pay-btn" disabled>線上繳費</button>
                 <a href="#" id="back-to-step1" class="back-link">«回上一步</a>
+            </div>
+        </div>
+
+        <div id="step3-area" class="hidden">
+            <h2 class="section-title">信用卡繳費</h2>
+            <p class="payment-summary">應繳總額：<span id="final-amount" class="price-text">0</span> 元</p>
+            
+            <div class="query-form">
+                <div class="form-group">
+                    <label>信用卡號：</label>
+                    <div class="cc-inputs">
+                        <input type="text" maxlength="4" class="cc-part"> - 
+                        <input type="text" maxlength="4" class="cc-part"> - 
+                        <input type="text" maxlength="4" class="cc-part"> - 
+                        <input type="text" maxlength="4" class="cc-part">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>有效年月：</label>
+                    <input type="text" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                    <label>安全碼：</label>
+                    <input type="text" placeholder="背面末三碼" maxlength="3" style="width: 120px;">
+                </div>
+            </div>
+
+            <div class="step-actions">
+                <button id="confirm-pay-btn" class="submit-btn">確認扣款</button>
+                <a href="#" id="back-to-step2" class="back-link">«回上一步</a>
             </div>
         </div>
     </div>
