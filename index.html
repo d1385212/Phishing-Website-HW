@@ -1,49 +1,45 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作業三：前端排版與互動練習</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>系統查詢入口</h1>
-            <p class="warning-text">注意：此為前端排版練習用網頁，非真實服務。</p>
-        </header>
-
-        <div class="progress-bar">
-            <div class="step active">步驟一：查詢資料</div>
-            <div class="step">步驟二：勾選明細</div>
-            <div class="step">步驟三：完成繳費</div>
-        </div>
-
+<div class="container">
+    <div id="step1-area">
         <form id="queryForm" class="query-form">
-            <div class="form-group">
-                <label for="idNumber">身分證字號：</label>
-                <input type="text" id="idNumber" placeholder="請輸入身分證字號" required>
-            </div>
-
-            <div class="form-group">
-                <label for="dob">出生年月日：</label>
-                <input type="date" id="dob" required>
-            </div>
-
-            <div class="form-group mock-captcha-group">
-                <label for="captcha">驗證碼：</label>
-                <div class="captcha-wrapper">
-                    <input type="text" id="captcha" placeholder="輸入右側文字" required>
-                    <div class="mock-captcha">A2EL</div>
-                </div>
-            </div>
-
             <div class="button-group">
                 <button type="submit" class="submit-btn">查詢</button>
             </div>
         </form>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <div id="step2-area" class="hidden">
+        <h2 class="section-title">未結案違規明細</h2>
+        
+        <div class="fine-list">
+            <div class="fine-item header-row">
+                <div>勾選</div>
+                <div>違規單號</div>
+                <div>違規事實</div>
+                <div>金額</div>
+            </div>
+            
+            <div class="fine-item">
+                <div><input type="checkbox" class="fine-checkbox" data-price="1600"></div>
+                <div class="fine-id">A12345678</div>
+                <div>超速行駛 (限速60/時速85)</div>
+                <div class="price">$1,600</div>
+            </div>
+
+            <div class="fine-item">
+                <div><input type="checkbox" class="fine-checkbox" data-price="600"></div>
+                <div class="fine-id">B98765432</div>
+                <div>違規轉彎</div>
+                <div class="price">$600</div>
+            </div>
+        </div>
+
+        <div class="total-area">
+            <p>已勾選金額總計：<span id="total-amount">$0</span></p>
+        </div>
+
+        <div class="button-group">
+            <button id="back-to-step1" class="secondary-btn">回上一步</button>
+            <button id="go-to-step3" class="submit-btn">確認繳費</button>
+        </div>
+    </div>
+</div>
