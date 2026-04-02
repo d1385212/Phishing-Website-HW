@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業三：前端排版與互動練習</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>系統查詢入口</h1>
+            <p class="warning-text">注意：此為前端排版練習用網頁，非真實服務。</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="step active">步驟一：查詢資料</div>
+            <div class="step">步驟二：勾選明細</div>
+            <div class="step">步驟三：完成繳費</div>
+        </div>
+
+        <form id="queryForm" class="query-form">
+            <div class="form-group">
+                <label for="idNumber">身分證字號：</label>
+                <input type="text" id="idNumber" placeholder="請輸入身分證字號" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">出生年月日：</label>
+                <input type="date" id="dob" required>
+            </div>
+
+            <div class="form-group mock-captcha-group">
+                <label for="captcha">驗證碼：</label>
+                <div class="captcha-wrapper">
+                    <input type="text" id="captcha" placeholder="輸入右側文字" required>
+                    <div class="mock-captcha">A2EL</div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">查詢</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
